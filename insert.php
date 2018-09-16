@@ -15,12 +15,12 @@ $email = $_POST['email'];
 
 if (!empty($username) && !empty($password) && !empty($email)) {
 
-    @$db = mysqli_connect("localhost", "root", "root", "test");
+    @$db = mysqli_connect("https://stormy-gorge-83409.herokuapp.com", "root", "root", "users");
 }else {
     echo "All values must be entered";
     exit("1");
 }
-mysqli_select_db("\mysqli", "test");
+mysqli_select_db("\mysqli", "users");
 {
 
     if (mysqli_connect_errno()) {
