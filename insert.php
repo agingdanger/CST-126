@@ -20,7 +20,7 @@ if (!empty($username) && !empty($password) && !empty($email)) {
     echo "All values must be entered";
     exit("1");
 }
-mysqli_select_db("\mysqli", "user");
+mysqli_select_db("$db", "user");
 {
 
     if (mysqli_connect_errno()) {
