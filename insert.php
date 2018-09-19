@@ -15,12 +15,12 @@ $email = $_POST['email'];
 
 if (!empty($username) && !empty($password) && !empty($email)) {
 
-    @$db = mysqli_connect("https://stormy-gorge-83409.herokuapp.com", "root", "root", "users");
+    @$db = mysqli_connect("https://stormy-gorge-83409.herokuapp.com", "g7t9d2srsz60d6e8", "peqn2hgv8zm6awzt", "lhhymmozru2i72c4");
 }else {
     echo "All values must be entered";
     exit("1");
 }
-mysqli_select_db("\mysqli", "users");
+mysqli_select_db("\mysqli", "user");
 {
 
     if (mysqli_connect_errno()) {
@@ -30,7 +30,7 @@ mysqli_select_db("\mysqli", "users");
 
     }
 
-    $sql = "INSERT INTO users (userName,userPass,userEmail) VALUES ('$username', '$password', '$email')";
+    $sql = "INSERT INTO user (userName,userPass,userEmail) VALUES ('$username', '$password', '$email')";
 
     if(mysqli_query($db, $sql)){
         echo "Records inserted successfully.";
