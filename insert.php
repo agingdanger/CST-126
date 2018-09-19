@@ -15,7 +15,7 @@ $email = $_POST['email'];
 
 if (!empty($username) && !empty($password) && !empty($email)) {
 
-    $db = mysqli_connect("https://stormy-gorge-83409.herokuapp.com/register.html", "g7t9d2srsz60d6e8", "peqn2hgv8zm6awzt", "lhhymmozru2i72c4");
+    $db = mysqli_connect("mysql://g7t9d2srsz60d6e8:peqn2hgv8zm6awzt@m7nj9dclezfq7ax1.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/lhhymmozru2i72c4", "g7t9d2srsz60d6e8", "peqn2hgv8zm6awzt", "lhhymmozru2i72c4");
 }else {
     echo "All values must be entered";
     exit("1");
