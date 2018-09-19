@@ -15,7 +15,7 @@ $email = $_POST['email'];
 
 if (!empty($username) && !empty($password) && !empty($email)) {
 
-    $db = mysqli_connect("mysql://g7t9d2srsz60d6e8:peqn2hgv8zm6awzt@m7nj9dclezfq7ax1.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/lhhymmozru2i72c4", "g7t9d2srsz60d6e8", "peqn2hgv8zm6awzt", "lhhymmozru2i72c4");
+    $conn = mysqli_connect("m7nj9dclezfq7ax1.cbetxkdyhwsb.us-east-1.rds.amazonaws.com", "g7t9d2srsz60d6e8", "peqn2hgv8zm6awzt", "lhhymmozru2i72c4");
 }else {
     echo "All values must be entered";
     exit("1");
@@ -32,7 +32,7 @@ if (!empty($username) && !empty($password) && !empty($email)) {
 
     $sql = "INSERT INTO user (userName,userPass,userEmail) VALUES ('$username', '$password', '$email')";
 
-    if(mysqli_query($db, $sql)){
+    if(mysqli_query($conn, $sql)){
         echo "Records inserted successfully.";
     } else{
         echo "ERROR: Could not able to execute $sql. " . mysqli_error($db);
