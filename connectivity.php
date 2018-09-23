@@ -28,7 +28,7 @@ function SignIn()
         $row =($query) or die();
         if(!empty($row['userName']) AND !empty($row['pass']))
         {
-            $_SESSION['userName'] = $row['pass'];
+            $_SESSION['userName'] = $row['userName'];
             echo "SUCCESSFULLY LOGIN TO USER PROFILE PAGE...";
 
         }
