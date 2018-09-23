@@ -30,6 +30,9 @@ if (!empty($username) && !empty($password) && !empty($email)) {
 
     }
 
+	
+
+
     $sql = "INSERT INTO user (userName,userPass,userEmail) VALUES ('$username', '$password', '$email')";
 
     if(mysqli_query($conn, $sql)){
@@ -38,3 +41,17 @@ if (!empty($username) && !empty($password) && !empty($email)) {
         echo "ERROR: Could not able to execute $sql. " . mysqli_error($db);
     }
 }
+
+?>
+
+<form action = "content.html">
+	Please immediately press the button<br>
+	
+	<input type = "submit" value= "Button">
+</form>
+
+<?php
+
+include "content.html";
+
+?>
