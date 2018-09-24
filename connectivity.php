@@ -53,8 +53,17 @@ function SignIn()
     session_start();
     if(!empty($_POST['user']))   //checking the 'user' name which is from Sign-In.html, is it empty or have some text
     {
-        $query =("SELECT *  FROM user where userName = '$_POST[user]' AND FROM user where userPass = '$_POST[pass]'") or die(mysql_error());
+        $query =("SELECT *  FROM user where userName = '$_POST[user]' AND = '$_POST[pass]'") or die(mysql_error());
         $row =($query) or die();
+        $result=mysql_query($query);
+        $count=mysql_num_rows($result);
+        
+        if ($count==1) {
+            echo "Success! $count";
+        } else {
+            echo "Unsuccessful! $count";
+        }
+        
         if(!empty($row['userName'])/* AND !empty($row['pass'])*/)
         {
             $_SESSION['userName'] = $row['pass'];
