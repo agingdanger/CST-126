@@ -15,10 +15,10 @@ if (mysqli_connect_errno()) {
 
 }
 
-/*
+
 $ID = $_POST['user'];
 $Password = $_POST['pass'];
-*/
+
 function SignIn()
 {
     session_start();   //starting the session for user profile page
@@ -26,10 +26,11 @@ function SignIn()
     {
         $query =("SELECT *  FROM user where userName = '$_POST[user]' AND pass = '$_POST[pass]'") or die(mysql_error());
         $row = mysqli_query($query) or die();
+		$count = mysql_num_rows($row);
 		//$conn = mysqli_connect("m7nj9dclezfq7ax1.cbetxkdyhwsb.us-east-1.rds.amazonaws.com", "g7t9d2srsz60d6e8", "peqn2hgv8zm6awzt", "lhhymmozru2i72c4");
-        if(!empty($row['userName']) AND !empty($row['userPass']))
+        //if(!empty($row['user']) AND !empty($row['user']))
         {
-            $_SESSION['userName'] = $row['userPass'];
+            $_SESSION['user'] = $row['user'];
             echo "SUCCESSFULLY LOGIN TO USER PROFILE PAGE...";
 
         }
