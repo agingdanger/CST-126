@@ -24,8 +24,8 @@ function SignIn()
     session_start();   //starting the session for user profile page
     if(!empty($_POST['user']))   //checking the 'user' name which is from Sign-In.html, is it empty or have some text
     {
-        $query =("SELECT *  FROM user where userName = '$_POST[user]' AND pass = '$_POST[pass]'") or die(mysql_error());
-        $row =($query) or die();
+        $query =("SELECT *  FROM user where userName = '$_POST[user]' AND pass = '$_POST[pass]'");// or die(mysql_error());
+        $row =($query);// or die();
         $result=mysql_query($query);
         $count=mysql_num_rows($result);
         
