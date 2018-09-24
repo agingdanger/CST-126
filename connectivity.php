@@ -21,27 +21,11 @@ $Password = $_POST['pass'];
 */
 function SignIn()
 {
-   
     session_start();   //starting the session for user profile page
-    $user = $_REQUEST['user'];
-    if(empty($user)){
-        echo "something is missing";
-    }
-    
-    if(!empty($user))   //checking the 'user' name which is from Sign-In.html, is it empty or have some text
+    if(!empty($_POST['user']))   //checking the 'user' name which is from Sign-In.html, is it empty or have some text
     {
-        
-        $query =("SELECT *  FROM user where userName = '$_POST[user]' AND pass = '$_POST[pass]'");// or die(mysql_error());
-        $row =($query);// or die();
-        $result=mysql_query($query);
-        $count=mysql_num_rows($result);
-        
-        if ($count==1) {
-            echo "Success! $count";
-        } else {
-            echo "Unsuccessful! $count";
-        }
-        
+        $query =("SELECT *  FROM user where userName = '$_POST[user]' AND pass = '$_POST[pass]'") or die(mysql_error());
+        $row =($query) or die();
         if(!empty($row['userName']) AND !empty($row['pass']))
         {
             $_SESSION['userName'] = $row['pass'];
@@ -52,9 +36,6 @@ function SignIn()
         {
             echo "SORRY... YOU ENTERD WRONG ID AND PASSWORD... PLEASE RETRY...";
         }
-    }
-    else{
-        echo "at least we got here";
     }
 }
 if(isset($_POST['submit']))
