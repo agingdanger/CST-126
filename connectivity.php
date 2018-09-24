@@ -17,8 +17,8 @@ if (mysqli_connect_errno()) {
 }
 
 
-$ID = $_POST['user'];
-$Password = $_POST['pass'];
+//$ID = $_POST['user'];
+//$Password = $_POST['pass'];
 
 function SignIn()
 {
