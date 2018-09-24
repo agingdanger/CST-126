@@ -13,6 +13,8 @@ $username = $_POST['username'];
 $password = $_POST['password'];
 $email = $_POST['email'];
 
+
+
 if (!empty($username) && !empty($password) && !empty($email)) {
 
     $conn = mysqli_connect("m7nj9dclezfq7ax1.cbetxkdyhwsb.us-east-1.rds.amazonaws.com", "g7t9d2srsz60d6e8", "peqn2hgv8zm6awzt", "lhhymmozru2i72c4");
