@@ -1,3 +1,26 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Sign-In</title>
+    <link rel="stylesheet" type="text">
+</head>
+<body id="body-color">
+<div id="Sign-In">
+    <fieldset style="width:30%"><legend>LOG-IN HERE</legend>
+        <form method="POST" action="connectivity.php">
+            User <br><label>
+            <input type="text" name="user" size="40">
+        </label><br>
+            Password <br><label>
+            <input type="password" name="pass" size="40">
+        </label><br>
+            <input id="button" type="submit" name="submit" value="Log-In">
+        </form>
+    </fieldset>
+</div>
+</body>
+</html>
+
 <?php
 /**
  * Created by PhpStorm.
@@ -15,10 +38,10 @@ if (mysqli_connect_errno()) {
 
 }
 
-/*
+
 $ID = $_POST['user'];
 $Password = $_POST['pass'];
-*/
+
 function SignIn()
 {
     session_start();   //starting the session for user profile page
