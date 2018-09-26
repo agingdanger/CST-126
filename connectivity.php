@@ -28,8 +28,8 @@ $start = true;
 //{
 
         session_start();   //starting the session for user profile page
-        //if(!empty($_POST['user']))   //checking the 'user' name which is from Sign-In.html, is it empty or have some text
-        if($start)
+        if(!empty($_POST['userr']))   //checking the 'user' name which is from Sign-In.html, is it empty or have some text
+        //if($start)
         {
             //echo "you made it this far";
             
@@ -37,10 +37,10 @@ $start = true;
             $result = mysqli_query($conn, $query);
             
             if ( false == $query){
-                echo "error1: ", mysqli_error($query);
+                echo "error1: " .  "mysqli_error($query)";
             }
             if ( false == $result){
-                echo "error2: ", mysqli_error($result);
+                echo "error2: " , "mysqli_error($result)";
             }
             
             //echo "but not this far";
@@ -49,7 +49,7 @@ $start = true;
             $row =$query; //or die();
             //echo "how about dat";
             
-            if(mysqli_num_rows($result) >= 1){
+            if(mysqli_num_rows($result) > 0){
                 while ($row = mysqli_fetch_assoc($result)){
                     echo "Name: " . $row["userName"]. "<br>";
                 }
@@ -57,6 +57,8 @@ $start = true;
             else{
                 echo "0 results" . "<br>";
             }
+            
+            $row = $query;
             
             if(!empty($row['userr']) AND !empty($row['pass']))
             {
