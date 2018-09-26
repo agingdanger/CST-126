@@ -34,13 +34,13 @@ $Password = $_POST['pass'];
             //echo "you made it this far";
             
             $query = mysqli_query("SELECT *  FROM user where userName = '$ID' AND userPass = '$Password'");// or die(mysqli_error());
-            $result = mysqli_query($conn, $query);
+            $result = mysqli_query($query);
             
             if ( false === $query){
-                echo "error1: " .  "mysqli_error($query)";
+                echo "error1: ";
             }
             if ( false === $result){
-                echo "error2: " , "mysqli_error($result)";
+                echo "error2: ";
             }
             
             //echo "but not this far";
