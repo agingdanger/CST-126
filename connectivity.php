@@ -42,8 +42,8 @@ $start = true;
             //echo $query;
             
             $row =$query; //or die();
-            echo "how about this";
-            if(!empty($row['userName']) AND !empty($row['userPass']))
+            echo "how about dat";
+            if(!empty($row[$ID]) AND !empty($row[$Password]))
             {
                 echo "where";
                 $_SESSION['userName'] = $row['pass'];
