@@ -17,8 +17,9 @@ if (mysqli_connect_errno($db)) {
 
 echo $_POST['user'];
 echo $_POST['pass'];
-//$ID = $_POST['user'];
-//$Password = $_POST['pass'];
+
+$ID = $_POST['user'];
+$Password = $_POST['pass'];
 
 $start = false;
 //SignIn();
@@ -30,6 +31,9 @@ $start = false;
     if($start)
     {
         $query =mysql_query("SELECT *  FROM user where userName = '$_POST[user]' AND userPass = '$_POST[pass]'");// or die(mysql_error());
+        
+        echo $query;
+        
         $row =($query); //or die();
         if(!empty($row['userName']) AND !empty($row['userPass']))
         {
