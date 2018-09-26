@@ -34,7 +34,7 @@ $start = true;
             //echo "you made it this far";
             
             $query = mysqli_query($db, "SELECT *  FROM user where userName = '$ID' AND userPass = '$Password'");// or die(mysqli_error());
-            $result =$query;
+            $result = mysqli_query($db, $query);
             if ( false == $result){
                 echo "error: ", mysqli_error($query);
             }
