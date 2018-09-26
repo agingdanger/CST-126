@@ -35,11 +35,15 @@ $start = true;
             
             $query = mysqli_query($db, "SELECT *  FROM user where userName = '$ID' AND userPass = '$Password'");// or die(mysqli_error());
             $result = mysqli_query($db, $query);
-            if ( false == $query){
-                echo "error: ", mysqli_error($query);
-            }
-            if ( false == $result){
-                echo "error: ", mysqli_error($result);
+            //if ( false == $query){
+            //    echo "error1: ", mysqli_error($query);
+            //}
+            //if ( false == $result){
+            //    echo "error2: ", mysqli_error($result);
+            //}
+            
+            while($a = mysqli_fetch_array($query)){
+                echo $a;
             }
             //echo "but not this far";
             print_var( $result);
