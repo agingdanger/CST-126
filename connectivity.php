@@ -33,8 +33,8 @@ $start = true;
         {
             //echo "you made it this far";
             
-            $query = mysqli_query("SELECT *  FROM user where userName = '$ID' AND userPass = '$Password'");// or die(mysqli_error());
-            $result = mysqli_query($conn, $query);
+            $query = "SELECT *  FROM user where userName = '$ID' AND userPass = '$Password'";// or die(mysqli_error());
+            $result =  $query;
             
             if ( false == $query){
                 echo "error1: " .  "mysqli_error($query)";
