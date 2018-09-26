@@ -33,9 +33,9 @@ $start = true;
         {
             //echo "you made it this far";
             
-            $query = mysqli_query($db, "SELECT *  FROM user where userName = '$ID' AND userPass = '$Password'");// or die(mysqli_error());
-            $result = $query->fetch_assoc();
-            $result = $result['*'];
+            $query = mysqli_query($db, "SELECT *  FROM lhhymmozru2i72c4.user where userName = '$ID' AND userPass = '$Password'");// or die(mysqli_error());
+            $result = mysqli_query($db, $query);
+            
             if ( false == $query){
                 echo "error1: ", mysqli_error($query);
             }
@@ -48,7 +48,16 @@ $start = true;
             
             $row =$query; //or die();
             echo "how about dat";
-            if(!empty($row['userName']) AND !empty($row['userPass']))
+            
+            if(mysqli_num_rows($result) > 1){
+                while ($row = mysqli_fetch_assoc($result)){
+                    echo "Name: " . $row["userName"]. "<br>";
+                }
+            }
+            else{
+                echo "0 results";
+            }
+            if(!empty($row['userr']) AND !empty($row['pass']))
             {
                 echo "where";
                 $_SESSION['userr'] = $row['pass'];
