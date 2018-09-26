@@ -33,7 +33,7 @@ $start = true;
         {
             //echo "you made it this far";
             
-            $query = mysqli_query("SELECT *  FROM lhhymmozru2i72c4.user where userName = '$ID' AND userPass = '$Password'");// or die(mysqli_error());
+            $query = mysqli_query("SELECT *  FROM user where userName = '$ID' AND userPass = '$Password'");// or die(mysqli_error());
             $result = mysqli_query($conn, $query);
             
             if ( false == $query){
@@ -57,6 +57,7 @@ $start = true;
             else{
                 echo "0 results" . "<br>";
             }
+            
             if(!empty($row['userr']) AND !empty($row['pass']))
             {
                 echo "where";
