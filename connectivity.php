@@ -40,6 +40,10 @@ function SignIn()
             echo "SORRY... YOU ENTERD WRONG ID AND PASSWORD... PLEASE RETRY...";
         }
     }
+    else
+    {
+        echo "You suck.";
+    }
 }
 //if(isset($_POST['submit']))
 //{
