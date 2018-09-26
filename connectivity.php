@@ -30,11 +30,14 @@ $start = false;
     //if(!empty($_POST['user']))   //checking the 'user' name which is from Sign-In.html, is it empty or have some text
     if($start)
     {
-        $query = mysqli_query("SELECT *  FROM user where userName = '$_POST[user]' AND userPass = '$_POST[pass]'") or die(mysqli_error());
+        echo "you made it this far";
         
+        $query = mysqli_query("SELECT *  FROM user where userName = '$_POST[user]' AND userPass = '$_POST[pass]'") or die(mysqli_error());
+        echo "but not this far";
         echo $query;
         
         $row =($query); //or die();
+        echo "how about this";
         if(!empty($row['userName']) AND !empty($row['userPass']))
         {
             $_SESSION['userName'] = $row['pass'];
