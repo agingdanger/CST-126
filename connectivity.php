@@ -43,19 +43,19 @@ $start = true;
                 echo "error2: ", mysqli_error($result);
             }
             
-            echo "but not this far";
+            //echo "but not this far";
             //print_var( $result);
             
             $row =$query; //or die();
-            echo "how about dat";
+            //echo "how about dat";
             
-            if(mysqli_num_rows($result) > 1){
+            if(mysqli_num_rows($result) >= 1){
                 while ($row = mysqli_fetch_assoc($result)){
                     echo "Name: " . $row["userName"]. "<br>";
                 }
             }
             else{
-                echo "0 results";
+                echo "0 results" . "<br>";
             }
             if(!empty($row['userr']) AND !empty($row['pass']))
             {
