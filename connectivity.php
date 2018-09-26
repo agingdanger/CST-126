@@ -38,8 +38,11 @@ $start = true;
             if ( false == $query){
                 echo "error: ", mysqli_error($query);
             }
+            if ( false == $result){
+                echo "error: ", mysqli_error($result);
+            }
             //echo "but not this far";
-            //echo $query;
+            print_var( $result);
             
             $row =$query; //or die();
             echo "how about dat";
