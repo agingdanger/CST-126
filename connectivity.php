@@ -30,14 +30,14 @@ $start = true;
     //if(!empty($_POST['user']))   //checking the 'user' name which is from Sign-In.html, is it empty or have some text
     if($start)
     {
-        echo "you made it this far";
+        //echo "you made it this far";
         
-        $query = mysqli_query("SELECT *  FROM user where userName = '$ID' AND userPass = '$Password'");// or die(mysqli_error());
+        $query = mysqli_query($db, "SELECT *  FROM user where userName = '$ID' AND userPass = '$Password'");// or die(mysqli_error());
         $result = mysqli_query($db, $query);
         if ( false == $result){
             echo "error: ", mysqli_error($query);
         }
-        echo "but not this far";
+        //echo "but not this far";
         echo $query;
         
         $row =($query); //or die();
