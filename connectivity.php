@@ -30,7 +30,7 @@ $start = false;
     //if(!empty($_POST['user']))   //checking the 'user' name which is from Sign-In.html, is it empty or have some text
     if($start)
     {
-        $query =mysql_query("SELECT *  FROM user where userName = '$_POST[user]' AND userPass = '$_POST[pass]'");// or die(mysql_error());
+        $query = mysqli_query("SELECT *  FROM user where userName = '$_POST[user]' AND userPass = '$_POST[pass]'") or die(mysqli_error());
         
         echo $query;
         
