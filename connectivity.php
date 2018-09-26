@@ -21,7 +21,7 @@ echo $_POST['pass'];
 $ID = $_POST['user'];
 $Password = $_POST['pass'];
 
-$start = false;
+$start = true;
 //SignIn();
 
 //function SignIn()
