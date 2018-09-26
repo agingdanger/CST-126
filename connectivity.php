@@ -21,7 +21,7 @@ if (mysqli_connect_errno($conn)) {
 $ID = $_POST['userr'];
 $Password = $_POST['pass'];
 
-$start = true;
+//$start = true;
 //SignIn();
 
 //function SignIn()
@@ -33,25 +33,26 @@ $start = true;
         {
             //echo "you made it this far";
             
-            $query = "SELECT *  FROM user where userName = '$ID' AND userPass = '$Password'";// or die(mysqli_error());
-            $result =  $query;
+            $query = mysqli_query("SELECT *  FROM user where userName = '$ID' AND userPass = '$Password'");// or die(mysqli_error());
+            $result = mysqli_query($conn, $query);
             
-            if ( false == $query){
+            if ( false === $query){
                 echo "error1: " .  "mysqli_error($query)";
             }
-            if ( false == $result){
+            if ( false === $result){
                 echo "error2: " , "mysqli_error($result)";
             }
             
             //echo "but not this far";
             //print_var( $result);
             
-            $row =$query; //or die();
+            //$row =$query; //or die();
             //echo "how about dat";
-            
-            if(mysqli_num_rows($result) > 0){
-                while ($row = mysqli_fetch_assoc($result)){
-                    echo "Name: " . $row["userName"]. "<br>";
+            if($res = mysqli_query($conn, $query)){
+                if(mysqli_num_rows($result) > 0){
+                    //while ($row = mysqli_fetch_assoc($result)){
+                        echo "Name: " . $row["userName"]. "<br>";
+                    //}
                 }
             }
             else{
