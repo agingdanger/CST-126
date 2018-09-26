@@ -6,9 +6,9 @@
  * Time: 4:38 PM
  */
 
-@$db = mysqli_connect("m7nj9dclezfq7ax1.cbetxkdyhwsb.us-east-1.rds.amazonaws.com", "g7t9d2srsz60d6e8", "peqn2hgv8zm6awzt", "lhhymmozru2i72c4");
+$conn = mysqli_connect("m7nj9dclezfq7ax1.cbetxkdyhwsb.us-east-1.rds.amazonaws.com", "g7t9d2srsz60d6e8", "peqn2hgv8zm6awzt", "lhhymmozru2i72c4");
 
-if (mysqli_connect_errno($db)) {
+if (mysqli_connect_errno($conn)) {
     echo "Error: Could not connect to database.  Please try again later.";
 }else{
     echo "Connection successful ";
@@ -33,8 +33,8 @@ $start = true;
         {
             //echo "you made it this far";
             
-            $query = mysqli_query($db, "SELECT *  FROM lhhymmozru2i72c4.user where userName = '$ID' AND userPass = '$Password'");// or die(mysqli_error());
-            $result = mysqli_query($db, $query);
+            $query = mysqli_query("SELECT *  FROM lhhymmozru2i72c4.user where userName = '$ID' AND userPass = '$Password'");// or die(mysqli_error());
+            $result = mysqli_query($conn, $query);
             
             if ( false == $query){
                 echo "error1: ", mysqli_error($query);
