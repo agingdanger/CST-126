@@ -43,11 +43,8 @@ $start = true;
                 echo "error2: ", mysqli_error($result);
             }
             
-            while($a = mysqli_fetch_array($query)){
-                echo $a;
-            }
             echo "but not this far";
-            print_var( $result);
+            //print_var( $result);
             
             $row =$query; //or die();
             echo "how about dat";
