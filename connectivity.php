@@ -19,13 +19,14 @@ if (mysqli_connect_errno($db)) {
 //$ID = $_POST['user'];
 //$Password = $_POST['pass'];
 
-
+$start = false;
 //SignIn();
 
 //function SignIn()
 //{
     session_start();   //starting the session for user profile page
-    if(!empty($_POST['user']))   //checking the 'user' name which is from Sign-In.html, is it empty or have some text
+    //if(!empty($_POST['user']))   //checking the 'user' name which is from Sign-In.html, is it empty or have some text
+    if($start)
     {
         $query =mysql_query("SELECT *  FROM user where userName = '$_POST[user]' AND pass = '$_POST[pass]'") or die(mysql_error());
         $row =($query) or die();
