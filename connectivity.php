@@ -15,8 +15,8 @@ if (mysqli_connect_errno($db)) {
 
 }
 
-echo $_POST['userr'];
-echo $_POST['pass'];
+//echo $_POST['userr'];
+//echo $_POST['pass'];
 
 $ID = $_POST['userr'];
 $Password = $_POST['pass'];
@@ -46,12 +46,12 @@ $start = true;
             while($a = mysqli_fetch_array($query)){
                 echo $a;
             }
-            //echo "but not this far";
+            echo "but not this far";
             print_var( $result);
             
             $row =$query; //or die();
             echo "how about dat";
-            if(!empty($row[$ID]) AND !empty($row[$Password]))
+            if(!empty($row['userr']) AND !empty($row['pass']))
             {
                 echo "where";
                 $_SESSION['userr'] = $row['pass'];
