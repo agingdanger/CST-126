@@ -15,7 +15,8 @@ if (mysqli_connect_errno($db)) {
 
 }
 
-
+echo $_POST['user'];
+echo $_POST['pass'];
 //$ID = $_POST['user'];
 //$Password = $_POST['pass'];
 
