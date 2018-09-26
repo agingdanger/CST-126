@@ -20,10 +20,10 @@ if (mysqli_connect_errno($db)) {
 //$Password = $_POST['pass'];
 
 
-SignIn();
+//SignIn();
 
-function SignIn()
-{
+//function SignIn()
+//{
     session_start();   //starting the session for user profile page
     if(!empty($_POST['user']))   //checking the 'user' name which is from Sign-In.html, is it empty or have some text
     {
@@ -44,7 +44,7 @@ function SignIn()
     {
         echo "You suck.";
     }
-}
+//}
 //if(isset($_POST['submit']))
 //{
 //    SignIn();
