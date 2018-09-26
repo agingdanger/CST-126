@@ -28,9 +28,9 @@ $start = false;
     //if(!empty($_POST['user']))   //checking the 'user' name which is from Sign-In.html, is it empty or have some text
     if($start)
     {
-        $query =mysql_query("SELECT *  FROM user where userName = '$_POST[user]' AND pass = '$_POST[pass]'") or die(mysql_error());
-        $row =($query) or die();
-        if(!empty($row['userName']) AND !empty($row['pass']))
+        $query =mysql_query("SELECT *  FROM user where userName = '$_POST[user]' AND userPass = '$_POST[pass]'");// or die(mysql_error());
+        $row =($query); //or die();
+        if(!empty($row['userName']) AND !empty($row['userPass']))
         {
             $_SESSION['userName'] = $row['pass'];
             echo "SUCCESSFULLY LOGIN TO USER PROFILE PAGE...";
