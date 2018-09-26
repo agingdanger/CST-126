@@ -58,7 +58,7 @@ $start = true;
                 echo "0 results" . "<br>";
             }
             
-            $row = $query;
+            $row = mysqli_query($conn, $query);
             
             if(!empty($row['userr']) AND !empty($row['pass']))
             {
