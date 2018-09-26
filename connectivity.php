@@ -39,7 +39,7 @@ $start = true;
                 echo "error: ", mysqli_error($query);
             }
             //echo "but not this far";
-            echo $result;
+            echo $query;
             
             $row =($query); //or die();
             echo "how about this";
