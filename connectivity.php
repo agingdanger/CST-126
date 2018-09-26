@@ -33,7 +33,7 @@ $Password = $_POST['pass'];
         {
             //echo "you made it this far";
             
-            $query = mysqli_query("SELECT *  FROM user where userName = '$ID' AND userPass = '$Password'");// or die(mysqli_error());
+            $query = mysqli_query("SELECT *  FROM user where userName = '$ID' AND userPass = '$Password'") or die(mysqli_error());
             $result = mysqli_query($query);
             
             if ( false === $query){
@@ -49,6 +49,7 @@ $Password = $_POST['pass'];
             //$row =$query; //or die();
             //echo "how about dat";
             if($res = mysqli_query($conn, $query)){
+                
                 if(mysqli_num_rows($result) > 0){
                     //while ($row = mysqli_fetch_assoc($result)){
                         echo "Name: " . $row["userName"]. "<br>";
