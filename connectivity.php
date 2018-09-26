@@ -15,10 +15,10 @@ if (mysqli_connect_errno($db)) {
 
 }
 
-//echo $_POST['user'];
-//echo $_POST['pass'];
+echo $_POST['userr'];
+echo $_POST['pass'];
 
-$ID = $_POST['user'];
+$ID = $_POST['userr'];
 $Password = $_POST['pass'];
 
 $start = true;
@@ -34,13 +34,14 @@ $start = true;
             //echo "you made it this far";
             
             $query = mysqli_query($db, "SELECT *  FROM user where userName = '$ID' AND userPass = '$Password'");// or die(mysqli_error());
-            $result = mysqli_query($db, $query);
-            //if ( false == $query){
-            //    echo "error1: ", mysqli_error($query);
-            //}
-            //if ( false == $result){
-            //    echo "error2: ", mysqli_error($result);
-            //}
+            $result = $query->fetch_assoc();
+            $result = $result['*'];
+            if ( false == $query){
+                echo "error1: ", mysqli_error($query);
+            }
+            if ( false == $result){
+                echo "error2: ", mysqli_error($result);
+            }
             
             while($a = mysqli_fetch_array($query)){
                 echo $a;
@@ -53,7 +54,7 @@ $start = true;
             if(!empty($row[$ID]) AND !empty($row[$Password]))
             {
                 echo "where";
-                $_SESSION['userName'] = $row['pass'];
+                $_SESSION['userr'] = $row['pass'];
                 echo "SUCCESSFULLY LOGIN TO USER PROFILE PAGE...";
     
             }
