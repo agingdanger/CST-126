@@ -45,6 +45,7 @@ $start = true;
             echo "how about this";
             if(!empty($row['userName']) AND !empty($row['userPass']))
             {
+                echo "where";
                 $_SESSION['userName'] = $row['pass'];
                 echo "SUCCESSFULLY LOGIN TO USER PROFILE PAGE...";
     
