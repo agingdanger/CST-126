@@ -43,8 +43,8 @@ function SignIn()
                 echo "<table>";
                 echo "<tr>";
                 echo "<th>id</th>";
-                echo "<th>first_name</th>";
-                echo "<th>last_name</th>";
+                echo "<th>first name</th>";
+                echo "<th>password</th>";
                 echo "<th>email</th>";
                 echo "</tr>";
                 while($row = mysqli_fetch_array($result)){
