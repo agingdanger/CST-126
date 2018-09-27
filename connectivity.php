@@ -34,8 +34,8 @@ function SignIn()
         }
         
         $query = ("SELECT *  FROM user where userName = '$_POST[userr]' AND userPass = '$_POST[pass]'") or die(mysql_error());  
-        $result = $conn->query($query);
-        $row = ($result) or die();
+        //$result = $conn->query($query);
+        //$row = ($result) or die();
         echo "Does it reach here?";
         
        if($result = mysqli_query($conn, $query)){
