@@ -36,6 +36,7 @@ function SignIn()
         $query = ("SELECT *  FROM user where userName = '$_POST[userr]' AND userPass = '$_POST[pass]'") or die(mysql_error());  
         $result = $conn->query($query);
         $row = ($result) or die();
+        echo "Does it reach here?";
         
        /* if($result = mysqli_query($conn, $query)){
             if(mysqli_num_rows($result) > 0){
@@ -75,6 +76,9 @@ function SignIn()
         {
             echo "SORRY... YOU ENTERD WRONG ID AND PASSWORD... PLEASE RETRY...";
         }
+    }
+    else{
+        echo "you suck.";
     }
 }
 if(isset($_POST['submit']))
