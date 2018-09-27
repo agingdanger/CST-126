@@ -65,10 +65,9 @@ function SignIn()
             echo "ERROR: Could not able to execute $query. " . mysqli_error($conn);
         }
         
-        //if(($row['userName']) === $_POST['userr'] && ($row['userPass']) === $_POST['pass'] )
+        if(($row['userName']) === $_POST['uzer'] && ($row['userPass']) === $_POST['pazz'] )
         //if(!empty($row['userName']) && !empty($row['userPass']))
-        $try = true;
-        if($try)
+
         {
             $_SESSION['userr'] = $row['userPass'];
             echo "SUCCESSFULLY LOGIN TO USER PROFILE PAGE...";
