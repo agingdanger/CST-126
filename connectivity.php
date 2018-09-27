@@ -6,7 +6,7 @@
  * Time: 4:38 PM
  */
 
-$conn = mysqli_connect("m7nj9dclezfq7ax1.cbetxkdyhwsb.us-east-1.rds.amazonaws.com", "g7t9d2srsz60d6e8", "peqn2hgv8zm6awzt", "lhhymmozru2i72c4");
+//$conn = mysqli_connect("m7nj9dclezfq7ax1.cbetxkdyhwsb.us-east-1.rds.amazonaws.com", "g7t9d2srsz60d6e8", "peqn2hgv8zm6awzt", "lhhymmozru2i72c4");
 
 if (mysqli_connect_errno()) {
     echo "Error: Could not connect to database.  Please try again later.";
@@ -24,10 +24,20 @@ function SignIn()
     session_start();   //starting the session for user profile page
     if(!empty($_POST['userr']))   //checking the 'user' name which is from Sign-In.html, is it empty or have some text
     {
-        $query = ("SELECT *  FROM user where userName = '$_POST[userr]' AND userPass = '$_POST[pass]'") or die(mysql_error());
-        $row = ($query) or die();
+        $conn = mysqli_connect("m7nj9dclezfq7ax1.cbetxkdyhwsb.us-east-1.rds.amazonaws.com", "g7t9d2srsz60d6e8", "peqn2hgv8zm6awzt", "lhhymmozru2i72c4");
         
-        if($result = mysqli_query($conn, $query)){
+        if (mysqli_connect_errno()) {
+            echo "Error: Could not connect to database.  Please try again later.";
+        }else{
+            echo "Connection successful ";
+            
+        }
+        
+        $query = ("SELECT *  FROM user where userName = '$_POST[userr]' AND userPass = '$_POST[pass]'") or die(mysql_error());  
+        $result = $conn->query($query);
+        $row = ($result) or die();
+        
+       /* if($result = mysqli_query($conn, $query)){
             if(mysqli_num_rows($result) > 0){
                 echo "<table>";
                 echo "<tr>";
@@ -52,7 +62,7 @@ function SignIn()
             }
         } else{
             echo "ERROR: Could not able to execute $query. " . mysqli_error($conn);
-        }
+        }*/
         
         
         if(!empty($row['userName']) && !empty($row['userPass']))
