@@ -45,8 +45,9 @@ $Password = $_POST['pass'];
             
             echo "but not this far";
             //print_var( $result);
+            $row = $query;
             
-            $row =$query or die();
+            $row = $query or die();
             //echo "how about dat";
             if($res = mysqli_query($conn, $query)){
                 
