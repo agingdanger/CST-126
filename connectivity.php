@@ -26,7 +26,7 @@ function SignIn()
     {
         $query =("SELECT *  FROM user where userName = '$_POST[userr]' AND pass = '$_POST[pass]'") or die(mysql_error());
         $row =($query) or die();
-        if(!empty($row['userName']) AND !empty($row['userName']))
+        if(!empty($row['userName']) AND !empty($row['userPass']))
         {
             $_SESSION['userName'] = $row['pass'];
             echo "SUCCESSFULLY LOGIN TO USER PROFILE PAGE...";
