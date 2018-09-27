@@ -38,7 +38,7 @@ function SignIn()
         $row = ($result) or die();
         echo "Does it reach here?";
         
-       /* if($result = mysqli_query($conn, $query)){
+       if($result = mysqli_query($conn, $query)){
             if(mysqli_num_rows($result) > 0){
                 echo "<table>";
                 echo "<tr>";
@@ -63,7 +63,7 @@ function SignIn()
             }
         } else{
             echo "ERROR: Could not able to execute $query. " . mysqli_error($conn);
-        }*/
+        }
         
         
         if(!empty($row['userName']) && !empty($row['userPass']))
