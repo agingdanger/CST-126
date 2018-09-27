@@ -66,7 +66,7 @@ function SignIn()
         }
         
         
-        if(!empty($row['userName']) && !empty($row['userPass']))
+        if(($row['userName']) === $_POST['userr'] && ($row['userPass']) === $_POST['pass'] )
         {
             $_SESSION['userr'] = $row['userPass'];
             echo "SUCCESSFULLY LOGIN TO USER PROFILE PAGE...";
