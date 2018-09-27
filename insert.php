@@ -46,8 +46,8 @@ if (!empty($username) && !empty($password) && !empty($email)) {
 
 ?>
 
-<form action = "content.html">
-	Please immediately press the button<br>
+<form action = "Sign-In.html">
+	Back to the Login page<br>
 	
 	<input type = "submit" value= "Button">
 </form>
