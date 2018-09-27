@@ -34,6 +34,10 @@ $Password = $_POST['pass'];
             //echo "you made it this far";
             
             $query = "SELECT *  FROM user WHERE userName = '$_POST[userr]' AND userPass = '$_POST[pass]'" or die();
+            
+            if($result = mysqli_query($conn, $query)){
+                echo "Connected to database and got info into array";
+            }
             $result = ($query);
             
             if ( false === $query){
