@@ -43,7 +43,7 @@ function SignIn()
                 echo "<table>";
                 echo "<tr>";
                 echo "<th>id</th>";
-                echo "<th>first name</th>";
+                echo "<th>username</th>";
                 echo "<th>password</th>";
                 echo "<th>email</th>";
                 echo "</tr>";
