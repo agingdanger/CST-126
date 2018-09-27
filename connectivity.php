@@ -6,89 +6,39 @@
  * Time: 4:38 PM
  */
 
-$conn = mysqli_connect("m7nj9dclezfq7ax1.cbetxkdyhwsb.us-east-1.rds.amazonaws.com", "g7t9d2srsz60d6e8", "peqn2hgv8zm6awzt", "lhhymmozru2i72c4");
+@$db = mysqli_connect("m7nj9dclezfq7ax1.cbetxkdyhwsb.us-east-1.rds.amazonaws.com", "g7t9d2srsz60d6e8", "peqn2hgv8zm6awzt", "lhhymmozru2i72c4");
 
-if (mysqli_connect_errno($conn)) {
+if (mysqli_connect_errno()) {
     echo "Error: Could not connect to database.  Please try again later.";
 }else{
     echo "Connection successful ";
 
 }
 
-//echo $_POST['userr'];
-//echo $_POST['pass'];
-
-$ID = $_POST['userr'];
+/*
+$ID = $_POST['user'];
 $Password = $_POST['pass'];
-
-//$start = true;
-//SignIn();
-
-//function SignIn()
-//{
-
-        session_start();   //starting the session for user profile page
-        if(!empty($_POST['userr']))   //checking the 'user' name which is from Sign-In.html, is it empty or have some text
-        //if($start)
+*/
+function SignIn()
+{
+    session_start();   //starting the session for user profile page
+    if(!empty($_POST['user']))   //checking the 'user' name which is from Sign-In.html, is it empty or have some text
+    {
+        $query =("SELECT *  FROM user where userName = '$_POST[user]' AND pass = '$_POST[pass]'") or die(mysql_error());
+        $row =($query) or die();
+        if(!empty($row['userName']) AND !empty($row['pass']))
         {
-            //echo "you made it this far";
-            
-            $query = "SELECT *  FROM user WHERE userName = '$_POST[userr]' AND userPass = '$_POST[pass]'" or die();
-            
-            if($result = mysqli_query($conn, $query)){
-                echo "Connected to database and got info into array" . "<br>";
-                if(mysqli_num_rows($result) > 0){
-                    echo "there is something in here";
-                }
-            }
-            $result = ($query);
-            
-            if ( false === $query){
-                echo "error1: ";
-            }
-            if ( false === $result){
-                echo "error2: ";
-            }
-            
-            echo "but not this far";
-            //print_var( $result);
-            $row = $query;
-            
-            $row = $query or die();
-            //echo "how about dat";
-            if($res = mysqli_query($conn, $query)){
-                
-                if(mysqli_num_rows($result) > 0){
-                    //while ($row = mysqli_fetch_assoc($result)){
-                        echo "Name: " . $row["userName"]. "<br>";
-                    //}
-                }
-            }
-            else{
-                echo "0 results" . "<br>";
-            }
-            
-            $row = mysqli_query($conn, $query);
-            
-            if(!empty($row['userr']) AND !empty($row['pass']))
-            {
-                echo "where";
-                $_SESSION['userr'] = $row['pass'];
-                echo "SUCCESSFULLY LOGIN TO USER PROFILE PAGE...";
-    
-            }
-            else
-            {
-                echo "SORRY... YOU ENTERD WRONG ID AND PASSWORD... PLEASE RETRY...";
-            }
+            $_SESSION['userName'] = $row['pass'];
+            echo "SUCCESSFULLY LOGIN TO USER PROFILE PAGE...";
+
         }
         else
         {
-            echo "You suck.";
+            echo "SORRY... YOU ENTERD WRONG ID AND PASSWORD... PLEASE RETRY...";
         }
-
-//}
-//if(isset($_POST['submit']))
-//{
-//    SignIn();
-//}
+    }
+}
+if(isset($_POST['submit']))
+{
+    SignIn();
+}
