@@ -33,7 +33,7 @@ $Password = $_POST['pass'];
         {
             //echo "you made it this far";
             
-            $query = "SELECT *  FROM user WHERE userName = '$_POST[userr]' AND userPass = '$_POST[pass]'";// or die(mysqli_error());
+            $query = "SELECT *  FROM user WHERE userName = '$_POST[userr]' AND userPass = '$_POST[pass]'" or die();
             $result = ($query);
             
             if ( false === $query){
