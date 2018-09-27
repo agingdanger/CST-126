@@ -26,6 +26,35 @@ function SignIn()
     {
         $query =("SELECT *  FROM user where userName = '$_POST[userr]' AND userPass = '$_POST[pass]'") or die(mysql_error());
         $row = ($query) or die();
+        
+        if($result = mysqli_query($conn, $query)){
+            if(mysqli_num_rows($result) > 0){
+                echo "<table>";
+                echo "<tr>";
+                echo "<th>id</th>";
+                echo "<th>first_name</th>";
+                echo "<th>last_name</th>";
+                echo "<th>email</th>";
+                echo "</tr>";
+                while($row = mysqli_fetch_array($result)){
+                    echo "<tr>";
+                    echo "<td>" . $row['userID'] . "</td>";
+                    echo "<td>" . $row['userName'] . "</td>";
+                    echo "<td>" . $row['userPass'] . "</td>";
+                    echo "<td>" . $row['userEmail'] . "</td>";
+                    echo "</tr>";
+                }
+                echo "</table>";
+                // Free result set
+                mysqli_free_result($result);
+            } else{
+                echo "No records matching your query were found.";
+            }
+        } else{
+            echo "ERROR: Could not able to execute $query. " . mysqli_error($conn);
+        }
+        
+        
         if(!empty($row['userName']) AND !empty($row['userPass']))
         {
             $_SESSION['userr'] = $row['userPass'];
