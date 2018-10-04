@@ -6,7 +6,7 @@
 <body>
 Implementing Access Control 367
 <?php
-$post = $_POST['sauce'];
+$post = $_POST['comment'];
 
 
 if(!empty($post)){
