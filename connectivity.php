@@ -71,6 +71,26 @@ function SignIn()
         {
             $_SESSION['userr'] = $row['userPass'];
             echo "SUCCESSFULLY LOGGED IN TO USER PROFILE PAGE...";
+            ?>
+            <!DOCTYPE HTML>
+            <html>
+            <head>
+                <title>Sign-In</title>
+                <link rel="stylesheet" type="text">
+            </head>
+            <body id="body-color">
+            <div id="Sign-In">
+                <fieldset style="width:30%"><legend>Continue to BLOG</legend>
+                    <form  action="content.html" method="POST">
+                        
+                        <input id="GObLOG" type="submit" name="submit" value="Log-In">
+                    </form>
+                </fieldset>
+            </div>
+            </body>
+            </html>
+            
+            <?php
 
         }
         else
