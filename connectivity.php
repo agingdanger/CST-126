@@ -75,7 +75,7 @@ function SignIn()
             <!DOCTYPE HTML>
             <html>
             <head>
-                <title>Sign-In</title>
+                <title>Log your whoa's</title>
                 <link rel="stylesheet" type="text">
             </head>
             <body id="body-color">
@@ -83,7 +83,7 @@ function SignIn()
                 <fieldset style="width:30%"><legend>Continue to BLOG</legend>
                     <form  action="content.html" method="POST">
                         
-                        <input id="GObLOG" type="submit" name="submit" value="Log-In">
+                        <input id="input" type="submit" name="submit" value="GObLOG">
                     </form>
                 </fieldset>
             </div>
