@@ -1,10 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Secret Page</title>
-</head>
-<body>
-Implementing Access Control 367
+
 <?php
 $post = $_POST['comment'];
 
@@ -52,7 +46,7 @@ if(mysqli_query($conn, $sql)){
     echo '<h1>Go Away!</h1>
 <p>You are not authorized to use this resource.</p>';
 }*/
-?>
-</body>
-</html>
+
+//</body>
+//</html>
 
