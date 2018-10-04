@@ -1,10 +1,11 @@
-
 <?php
 $post = $_POST['comment'];
 
 
 if(!empty($post)){
+    
     echo $post;
+    
     $conn = mysqli_connect("m7nj9dclezfq7ax1.cbetxkdyhwsb.us-east-1.rds.amazonaws.com", "g7t9d2srsz60d6e8", "peqn2hgv8zm6awzt", "lhhymmozru2i72c4");
     
     $sql = "INSERT INTO blogPost (pos) VALUES ('$post')";
