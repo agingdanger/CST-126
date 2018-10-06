@@ -1,7 +1,7 @@
 <?php
 $post = $_POST['comment'];
 
-$userID = mysql_real_escape_string($_SESSION['id']);
+$userID = $_SESSION['id'];
 
 //echo $_SESSION['userr'];
 
