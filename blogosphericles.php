@@ -3,10 +3,10 @@ $post = $_POST['comment'];
 
 $userID = mysql_real_escape_string($_SESSION['id']);
 
-echo $_SESSION['userr'];
+//echo $_SESSION['userr'];
 
 
-echo $_SESSION['id'];
+//echo $_SESSION['id'];
 
 
 
