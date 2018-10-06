@@ -80,6 +80,8 @@ function SignIn()
                 echo "it's empty";
             }
             
+            print_r($_SESSION);
+            
             echo "SUCCESSFULLY LOGGED IN TO USER PROFILE PAGE...";
             ?>
             <!DOCTYPE HTML>
