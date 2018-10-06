@@ -3,6 +3,10 @@ $post = $_POST['comment'];
 
 $userID = $_SESSION['id'];
 
+
+if (empty($_SESSION)){
+    echo "empty dawg";
+}
 print_r($_SESSION);
 
 //echo $_SESSION['userr'];
