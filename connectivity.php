@@ -73,22 +73,14 @@ function SignIn()
         {
             if($result = mysqli_query($conn, $query)){
                 if(mysqli_num_rows($result) > 0){
-                    echo "<table>";
-                    echo "<tr>";
-                    echo "<th>id</th>";
-                    echo "<th>username</th>";
-                    echo "<th>password</th>";
-                    echo "<th>email</th>";
-                    echo "</tr>";
                     while($row = mysqli_fetch_array($result)){
                         echo "<tr>";
                         $_SESSION[id] =  $row['userID'];
-                        $_SESSION["user"] = $row['userr'];
-                        $_SESSION["pass"] = $row['pass'];
+                        $_SESSION["user"] = $row['userName'];
+                        $_SESSION["pass"] = $row['userPass'];
                         $_SESSION["email"] = $row['userEmail'];
                         echo "</tr>";
                     }
-                    echo "</table>";
                     // Free result set
                     mysqli_free_result($result);
                 } else{
