@@ -1,4 +1,7 @@
 <?php
+
+session_start();
+
 $post = $_POST['comment'];
 
 $userID = $_SESSION['id'];
