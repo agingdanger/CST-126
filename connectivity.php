@@ -101,7 +101,7 @@ function SignIn()
                 
             }
             
-            print_r($_SESSION);
+            //print_r($_SESSION);
             
             echo "SUCCESSFULLY LOGGED IN TO USER PROFILE PAGE...";
             
