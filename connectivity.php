@@ -78,9 +78,9 @@ function SignIn()
                 $_SESSION["pass"] = $row['pass'];
                 $_SESSION["email"] = $row['userEmail'];
             }
-            $_SESSION["user"] = $_POST['userr'];
-            $_SESSION["pass"] = $_POST['pass'];
-            $_SESSION["id"] = $_POST['userID'];
+            //$_SESSION["user"] = $_POST['userr'];
+            //$_SESSION["pass"] = $_POST['pass'];
+            //$_SESSION["id"] = $_POST['userID'];
             
             echo $_POST['userr'];
             
