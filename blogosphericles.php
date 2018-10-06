@@ -1,7 +1,7 @@
 <?php
 $post = $_POST['comment'];
 
-$userID = mysql_real_escape_string($_SESSION['id']);
+//$userID = mysql_real_escape_string($_SESSION['id']);
 
 //echo $_SESSION['userr'];
 
@@ -16,7 +16,7 @@ if(!empty($post)){
     
     $conn = mysqli_connect("m7nj9dclezfq7ax1.cbetxkdyhwsb.us-east-1.rds.amazonaws.com", "g7t9d2srsz60d6e8", "peqn2hgv8zm6awzt", "lhhymmozru2i72c4");
     
-    $sql = ("INSERT INTO blogPost (pos, id) VALUES ( '$post' , '{$_SESSION['id']}')");
+//    $sql = ("INSERT INTO blogPost (pos, id) VALUES ( '$post' , '{$_SESSION['id']}')");
     
 } else {
     echo "You need to type something in!";
