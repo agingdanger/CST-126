@@ -71,9 +71,15 @@ function SignIn()
         //if(!empty($row['userName']) && !empty($row['userPass']))
 
         {
-            
-            $_SESSION["userr"] = $_POST['userr'];
-            $_SESSION["pazz"] = $_POST['userPass'];
+            while($row = mysqli_fetch_array($result)){
+                
+                $_SESSION[id] =  $row['userID'];
+                $_SESSION["user"] = $row['userr'];
+                $_SESSION["pass"] = $row['pass'];
+                $_SESSION["email"] = $row['userEmail'];
+            }
+            $_SESSION["user"] = $_POST['userr'];
+            $_SESSION["pass"] = $_POST['pass'];
             $_SESSION["id"] = $_POST['userID'];
             
             echo $_POST['userr'];
