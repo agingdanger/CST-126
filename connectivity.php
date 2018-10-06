@@ -69,7 +69,7 @@ function SignIn()
         //if(!empty($row['userName']) && !empty($row['userPass']))
 
         {
-            $_SESSION['userr'] = $row['userName'];
+            $_SESSION['userr'] = $_POST['uzer'];
             $_SESSION['pazz'] = $row['userPass'];
             $_SESSION['id'] = $row['userID'];
             
