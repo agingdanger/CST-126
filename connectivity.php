@@ -72,7 +72,7 @@ function SignIn()
 
         {
             
-            $_SESSION["userr"] = $_POST['uzer'];
+            $_SESSION["userr"] = $_POST['userr'];
             $_SESSION["pazz"] = $_POST['userPass'];
             $_SESSION["id"] = $_POST['userID'];
             
