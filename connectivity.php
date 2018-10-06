@@ -94,7 +94,6 @@ function SignIn()
             //$_SESSION["pass"] = $_POST['pass'];
             //$_SESSION["id"] = $_POST['userID'];
             
-            echo $_POST['userr'];
             
             if(empty($_SESSION)){
                 
