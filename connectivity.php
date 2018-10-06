@@ -19,9 +19,11 @@
 $ID = $_POST['user'];
 $Password = $_POST['pass'];
 */
+session_start();
+
 function SignIn()
 {
-    session_start();   //starting the session for user profile page
+   // session_start();   //starting the session for user profile page
     if(!empty($_POST['userr']))   //checking the 'user' name which is from Sign-In.html, is it empty or have some text
     {
         $conn = mysqli_connect("m7nj9dclezfq7ax1.cbetxkdyhwsb.us-east-1.rds.amazonaws.com", "g7t9d2srsz60d6e8", "peqn2hgv8zm6awzt", "lhhymmozru2i72c4");
@@ -69,6 +71,7 @@ function SignIn()
         //if(!empty($row['userName']) && !empty($row['userPass']))
 
         {
+            
             $_SESSION['userr'] = $_POST['uzer'];
             $_SESSION['pazz'] = $row['userPass'];
             $_SESSION['id'] = $row['userID'];
