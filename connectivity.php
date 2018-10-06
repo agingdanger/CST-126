@@ -73,7 +73,9 @@ function SignIn()
             $_SESSION['pazz'] = $row['userPass'];
             $_SESSION['id'] = $row['userID'];
             
-            echo $_SESSION['userr'];
+            if(empty($_SESSION['userr'])){
+                echo "it's empty";
+            }
             
             echo "SUCCESSFULLY LOGGED IN TO USER PROFILE PAGE...";
             ?>
