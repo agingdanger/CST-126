@@ -28,7 +28,7 @@ if(!empty($post)){
 if(mysqli_query($conn, $sql)){
     echo "Blog Posted to our Records";
 } else{
-    echo "ERROR: Could not able to execute $sql. " . mysqli_error($conn);
+    echo "ERROR: Could not able to execute $sql. " . mysqli_error($sql);
 }
         
         
