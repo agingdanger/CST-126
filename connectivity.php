@@ -73,17 +73,21 @@ function SignIn()
         {
             
             $_SESSION['userr'] = $_POST['uzer'];
-            $_SESSION['pazz'] = $row['userPass'];
-            $_SESSION['id'] = $row['userID'];
+            $_SESSION['pazz'] = $_POST['userPass'];
+            $_SESSION['id'] = $_POST['userID'];
             
             if(empty($_SESSION['userr'])){
+                
                 echo "it's empty";
+                
             }
             
             print_r($_SESSION);
             
             echo "SUCCESSFULLY LOGGED IN TO USER PROFILE PAGE...";
+            
             ?>
+            
             <!DOCTYPE HTML>
             <html>
             <head>
