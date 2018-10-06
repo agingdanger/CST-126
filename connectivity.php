@@ -76,6 +76,8 @@ function SignIn()
             $_SESSION["pazz"] = $_POST['userPass'];
             $_SESSION["id"] = $_POST['userID'];
             
+            echo $_POST['uzer'];
+            
             if(empty($_SESSION)){
                 
                 echo "it's empty";
