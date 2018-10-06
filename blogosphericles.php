@@ -3,6 +3,8 @@ $post = $_POST['comment'];
 
 $userID = $_SESSION['id'];
 
+print_r($_SESSION);
+
 //echo $_SESSION['userr'];
 
 
