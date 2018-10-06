@@ -1,6 +1,14 @@
 <?php
 $post = $_POST['comment'];
 
+echo $_SESSION['userID'];
+
+"<br>";
+
+echo $_SESSION['userName'];
+
+"<br>";
+
 
 if(!empty($post)){
     
