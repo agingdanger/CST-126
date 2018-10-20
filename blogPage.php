@@ -18,18 +18,21 @@ if (mysqli_num_rows($result) > 0) {
         echo $row["postID"]. " - Post " . $row["pos"]. " " . $row["user_userID"]. "<br>";
         
         if($row["user_userID"] === $_SESSION['id']){
-            $PDelete = $row['postID'];
+            
             ?>
             <html>
             <form action = "blogPage.php" method = "POST">
             <input id = "delete" type = "submit" name = "delete_post" value = "Delete">
+            Delete A Post
+            <input id = "deleet" type = "text" name = "deleet" value = "Post ID">
             </form>
             </html>
             <?php
+            $DPost = $_POST['deleet'];
         }
         if(isset($_POST['delete_post'])){
             //echo "Please get here";
-            $sql = "DELETE FROM blogPost WHERE postID = pos";
+            $sql = "DELETE FROM blogPost WHERE postID = $DPost";
         }
     }
 	
