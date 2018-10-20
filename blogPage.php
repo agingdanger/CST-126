@@ -15,7 +15,7 @@ $result = mysqli_query($conn, $sql);
 if (mysqli_num_rows($result) > 0) {
     // output data of each row
     while($row = mysqli_fetch_assoc($result)) {
-        echo "" . $row["postID"]. " - Post " . $row["pos"]. " " . $row["user_userID"]. "<br>";
+        echo $row["postID"]. " - Post " . $row["pos"]. " " . $row["user_userID"]. "<br>";
         
         if($row["user_userID"] === $_SESSION['id']){
             $PDelete = $row['postID'];
@@ -28,7 +28,7 @@ if (mysqli_num_rows($result) > 0) {
             <?php
         }
         if(isset($_POST['delete_post'])){
-            echo "Please get here";
+            //echo "Please get here";
             $sql = "DELETE FROM blogPost WHERE postID = $row('postID')";
         }
     }
