@@ -36,7 +36,7 @@ if (mysqli_num_rows($result) > 0) {
             
             $conn;
             
-            if(isset($_POST['delete_post'])){
+            if(isset($_POST['delete_post']) && $row["user_userID"] === $_SESSION['id']){
                 //echo "Please get here";
                 $sql = "DELETE FROM blogPost WHERE postID = $DPost";
                 if (mysqli_query($conn, $sql)) {
