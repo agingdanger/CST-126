@@ -39,6 +39,9 @@ if (mysqli_num_rows($result) > 0) {
             
             $conn;
         if  (mysqli_num_rows($result) > 0) {
+            echo "first if";
+            echo $DPost;
+            
             while($row = mysqli_fetch_assoc($result)) {
                 if(isset($_POST['delete_post'])){
                     
