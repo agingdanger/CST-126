@@ -22,7 +22,9 @@ if (mysqli_num_rows($result) > 0) {
             
         }
         
-        ?>
+    }
+    
+    ?>
             <html>
             <form action = "blogPage.php" method = "POST">
             <input id = "delete" type = "submit" name = "delete_post" value = "Delete">
@@ -30,20 +32,14 @@ if (mysqli_num_rows($result) > 0) {
             <input id = "deleet" type = "text" name = "deleet" value = "Post ID">
             </form>
             </html>
-            <?php
+    <?php
             $DPost = $_POST["deleet"];
             
         if(isset($_POST['delete_post'])){
             //echo "Please get here";
         
             $sql = "DELETE FROM blogPost WHERE postID = $DPost";
-            if (mysqli_query($conn, $sql)) {
-                
-                echo "Post successfully deleted";     
-                
-            }
         }
-    }
 	
 } else {
     echo "0 results";
