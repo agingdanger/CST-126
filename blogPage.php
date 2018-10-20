@@ -27,10 +27,10 @@ if (mysqli_num_rows($result) > 0) {
             </html>
             <?php
         }
-        if(isset($_POST['delete_post'])){
-            echo "Please get here";
-            $sql = "DELETE FROM blogPost WHERE postID = $_SESSION['id']";
-        }
+        //if(isset($_POST['delete_post'])){
+        //    echo "Please get here";
+        //    $sql = "DELETE FROM blogPost WHERE postID = $_SESSION['id']";
+        //}
     }
 	
 } else {
