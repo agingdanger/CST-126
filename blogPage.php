@@ -37,20 +37,21 @@ if (mysqli_num_rows($result) > 0) {
             
             $DPost = $_POST["deleet"];
             
-            $conn;
+            $result = mysqli_query($conn, $sql);
         if  (mysqli_num_rows($result) > 0) {
             echo "first if";
             echo $DPost;
             
             while($row = mysqli_fetch_assoc($result)) {
+                echo "first while";
                 if(isset($_POST['delete_post'])){
-                    
+                    echo "second if";
                     if($row["user_userID"] === $_SESSION['id']){
-                        echo "Please get here";
+                        echo "third if";
                     }
                     $sql = "DELETE FROM blogPost WHERE postID = $DPost";
                     if (mysqli_query($conn, $sql)) {
-                        
+                        echo "fourth if";
                     }
                     
                 }
