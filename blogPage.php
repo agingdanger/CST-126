@@ -17,13 +17,12 @@ if (mysqli_num_rows($result) > 0) {
     while($row = mysqli_fetch_assoc($result)) {
         echo $row["postID"]. " - Post " . $row["pos"]. " " . $row["user_userID"]. "<br>";
         
-        if($row["user_userID"] === $_SESSION['id']){
-            
-            
-        }
+        //if($row["user_userID"] === $_SESSION['id']){
+        //    
+        
+        //}
         
     }
-    
     ?>
             <html>
             <form action = "blogPage.php" method = "POST">
@@ -32,15 +31,21 @@ if (mysqli_num_rows($result) > 0) {
             <input id = "deleet" type = "text" name = "deleet" value = "Post ID">
             </form>
             </html>
-    <?php
+            <?php
             $DPost = $_POST["deleet"];
             
-        if(isset($_POST['delete_post'])){
-            //echo "Please get here";
-        
-            $sql = "DELETE FROM blogPost WHERE postID = $DPost";
-        }
-	
+            $conn;
+            
+            if(isset($_POST['delete_post'])){
+                //echo "Please get here";
+                $sql = "DELETE FROM blogPost WHERE postID = $DPost";
+                if (mysqli_query($conn, $sql)) {
+                    
+                }
+                
+            }
+
+    
 } else {
     echo "0 results";
 }
