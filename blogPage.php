@@ -19,7 +19,10 @@ if (mysqli_num_rows($result) > 0) {
         
         if($row["user_userID"] === $_SESSION['id']){
             
-            ?>
+            
+        }
+        
+        ?>
             <html>
             <form action = "blogPage.php" method = "POST">
             <input id = "delete" type = "submit" name = "delete_post" value = "Delete">
@@ -30,11 +33,15 @@ if (mysqli_num_rows($result) > 0) {
             <?php
             $DPost = $_POST["deleet"];
             
-        }
         if(isset($_POST['delete_post'])){
             //echo "Please get here";
-
+        
             $sql = "DELETE FROM blogPost WHERE postID = $DPost";
+            if (mysqli_query($conn, $sql)) {
+                
+                echo "Post successfully deleted";     
+                
+            }
         }
     }
 	
