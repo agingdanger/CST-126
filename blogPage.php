@@ -32,6 +32,8 @@ if (mysqli_num_rows($result) > 0) {
             </form>
             </html>
             <?php
+            
+            session_start();
             $DPost = $_POST["deleet"];
             
             $conn;
