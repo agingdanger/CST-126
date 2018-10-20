@@ -32,6 +32,7 @@ if (mysqli_num_rows($result) > 0) {
             $sql = "DELETE FROM blogPost WHERE postID = $_SESSION['id']";
         }
     }
+	
 } else {
     echo "0 results";
 }
