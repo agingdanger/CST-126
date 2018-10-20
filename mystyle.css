@@ -1,0 +1,49 @@
+body {
+    background-color: darkgrey;
+}
+
+form {
+    background-color: dimgrey;
+    color: white;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+}
+
+p.solid {border-style: solid;}
+
+h1 {
+    background-color: darkslateblue;
+    color: white;
+}
+
+div {
+    background-color: rebeccapurple;
+}
+
+p {
+    background-color: aliceblue;
+}
+
+tr {
+    color: white;
+}
+
+br {
+    color: white;
+}
+
+.container {
+    position: relative;
+}
+
+.center {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+}
