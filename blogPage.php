@@ -29,7 +29,7 @@ if (mysqli_num_rows($result) > 0) {
         }
         if(isset($_POST['delete_post'])){
             //echo "Please get here";
-            $sql = "DELETE FROM blogPost WHERE postID = $row('postID')";
+            $sql = "DELETE FROM blogPost WHERE postID = pos";
         }
     }
 	
