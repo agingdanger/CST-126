@@ -38,6 +38,7 @@ if (mysqli_num_rows($result) > 0) {
             $DPost = $_POST["deleet"];
             
             $conn;
+        if  (mysqli_num_rows($result) > 0) {
             while($row = mysqli_fetch_assoc($result)) {
                 if(isset($_POST['delete_post']) && $row["user_userID"] === $_SESSION['id']){
                     //echo "Please get here";
@@ -48,7 +49,7 @@ if (mysqli_num_rows($result) > 0) {
                     
                 }
             }
-
+        }
     
 } else {
     echo "0 results";
