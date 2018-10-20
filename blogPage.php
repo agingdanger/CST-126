@@ -28,10 +28,13 @@ if (mysqli_num_rows($result) > 0) {
             </form>
             </html>
             <?php
-            $DPost = $_POST['deleet'];
+            $DPost = $_POST["deleet"];
+            
+            echo $DPost;
         }
         if(isset($_POST['delete_post'])){
             //echo "Please get here";
+            echo $DPost;
             $sql = "DELETE FROM blogPost WHERE postID = $DPost";
         }
     }
