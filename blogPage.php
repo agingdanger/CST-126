@@ -23,6 +23,11 @@ if (mysqli_num_rows($result) > 0) {
         //}
         
     }
+} 
+else 
+{
+echo "0 results";
+}
     ?>
             <html>
             <form action = "blogPage.php" method = "POST">
@@ -43,7 +48,6 @@ if (mysqli_num_rows($result) > 0) {
             echo $DPost;
             
             while($row = mysqli_fetch_assoc($result)) {
-                echo "first while";
                 if(isset($_POST['delete_post'])){
                     echo "second if";
                     if($row["user_userID"] === $_SESSION['id']){
@@ -57,9 +61,5 @@ if (mysqli_num_rows($result) > 0) {
                 }
             }
         }
-    
-} else {
-    echo "0 results";
-}
 
 ?>
