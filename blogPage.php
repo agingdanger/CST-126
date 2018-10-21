@@ -43,24 +43,34 @@ echo "0 results";
             $DPost = $_POST["deleet"];
             
             $result = mysqli_query($conn, $sql);
-        if  (mysqli_num_rows($result) > 0) {
-            echo "first if";
-            echo $DPost;
             
-            while($row = mysqli_fetch_assoc($result)) {
-                if(isset($_POST['delete_post'])){
-                    echo "second if";
-                    if($row["user_userID"] === $_SESSION['id']){
-                            echo "third if";
-                        
-                        $sql = "DELETE FROM blogPost WHERE postID = $DPost";
-                        if (mysqli_query($conn, $sql)) {
-                            echo "fourth if";
-                        }
-                    }
-                    
+            if($sql = "SELECT EXISTS (SELECT 1 FROM blogPost WHERE postID = $DPost AND user_userID = $_SESSION('id')"){
+                $sql = "DELETE FROM blogPost WHERE postID = $DPost";
+                if (mysqli_query($conn, $sql)) {
+                    echo "fourth if";
                 }
             }
-        }
+            
+            
+        //if  (mysqli_num_rows($result) > 0) {
+        //    echo "first if";
+        //    echo $DPost;
+            
+        //    while($row = mysqli_fetch_assoc($result)) {
+        //        if(isset($_POST['delete_post'])){
+        //            echo "second if";
+        //            if($row["user_userID"] === $_SESSION['id']){
+        //                    echo "third if";
+                        
+        //                $sql = "DELETE FROM blogPost WHERE postID = $DPost";
+        //                if (mysqli_query($conn, $sql)) {
+        //                   echo "fourth if";
+        //                }
+        //            }
+        //            else exit(0);
+                    
+        //       }
+        //   }
+        //}
 
 ?>
