@@ -44,7 +44,10 @@ echo "0 results";
             
             $result = mysqli_query($conn, $sql);
             
-            if($sql = "SELECT FROM blogPost WHERE postID = $DPost AND user_userID = $_SESSION('id') LIMIT 1"){
+            //"SELECT FROM blogPost WHERE postID == $DPost AND user_userID == $_SESSION('id') LIMIT 1"
+    
+            if($sql = "SELECT FROM blogPost WHERE postID = $DPost") 
+                if($sql = "SELECT FROM blogPost WHERE user_userID = $_SESSION('id') && SELECT FROM user WHERE userID = $_SESSION('id')"){
                 $sql = "DELETE FROM blogPost WHERE postID = $DPost";
                 if (mysqli_query($conn, $sql)) {
                     echo "fourth if";
