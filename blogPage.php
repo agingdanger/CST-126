@@ -51,11 +51,12 @@ echo "0 results";
                 if(isset($_POST['delete_post'])){
                     echo "second if";
                     if($row["user_userID"] === $_SESSION['id']){
-                        echo "third if";
-                    }
-                    $sql = "DELETE FROM blogPost WHERE postID = $DPost";
-                    if (mysqli_query($conn, $sql)) {
-                        echo "fourth if";
+                            echo "third if";
+                        
+                        $sql = "DELETE FROM blogPost WHERE postID = $DPost";
+                        if (mysqli_query($conn, $sql)) {
+                            echo "fourth if";
+                        }
                     }
                     
                 }
