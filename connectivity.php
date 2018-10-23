@@ -1,3 +1,12 @@
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="mystyle.css">
+    <meta charset="UTF-8">
+</head>
+</html>
+
+
+
 <?php
 /**
  * Created by PhpStorm.

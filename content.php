@@ -1,3 +1,5 @@
+
+
 <?php
   session_start();  
 ?>
@@ -7,6 +9,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" type="text/css" href="mystyle.css">
     <title>Secret Page</title>
 </head>
 <body>
