@@ -118,11 +118,12 @@ function SignIn()
                 <fieldset style="width:30%"><legend>Continue to BLOG</legend>
                     <form  action="content.php" method="POST">
                         
-                        <input id="input" type="submit" name="submit" value="go Post">
+                    <input id="input" type="submit" name="submit" value="go Post">    
+                    </form>    
+                    
                     <form action= "blogPage.php" method="POST">
                     
                     <input id= "input" type = "submit" name ="goder" value= "read Blog">
-                    </form>
                     </form>
                 </fieldset>
             </div>
