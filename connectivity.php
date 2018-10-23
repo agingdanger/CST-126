@@ -1,3 +1,14 @@
+<!DOCTYPE HTML>
+            <html>
+            <head>
+                <title>WELCOME</title>
+                <link rel="stylesheet" type="text">
+            </head>
+            </html>
+
+
+
+
 <?php
 /**
  * Created by PhpStorm.
@@ -115,10 +126,11 @@ function SignIn()
             </head>
             <body id="body-color">
             <div id="Sign-In">
-                <fieldset style="width:30%"><legend>Continue to BLOG</legend>
-                    <form  action="content.php" method="POST">
-                        
-                        <input id="input" type="submit" name="submit" value="GObLOG">
+                <fieldset style="width:30%"><legend>To the BLOG!</legend>
+                    <form action= "blogPage.php" method="POST">
+                    
+                    <input id= "input" type = "submit" name ="goder" value= "continue">
+                    </form>
                     </form>
                 </fieldset>
             </div>
