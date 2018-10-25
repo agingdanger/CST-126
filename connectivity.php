@@ -70,7 +70,7 @@ function SignIn()
                 // Free result set
                 mysqli_free_result($result);
             } else{
-                echo "No records matching your query were found.";
+               // echo "No records matching your query were found.";
             }
         } else{
             echo "ERROR: Could not able to execute $query. " . mysqli_error($conn);
@@ -89,6 +89,9 @@ function SignIn()
                         $_SESSION["pass"] = $row['userPass'];
                         $_SESSION["email"] = $row['userEmail'];
                         echo "</tr>";
+                        
+                        echo "SUCCESSFULLY LOGGED IN TO USER PROFILE PAGE...";
+                        
                     }
                     // Free result set
                     mysqli_free_result($result);
@@ -106,13 +109,13 @@ function SignIn()
             
             if(empty($_SESSION)){
                 
-                echo "it's empty";
+             //   echo "it's empty";
                 
             }
             
             //print_r($_SESSION);
             
-            echo "SUCCESSFULLY LOGGED IN TO USER PROFILE PAGE...";
+            
             
             ?>
             
