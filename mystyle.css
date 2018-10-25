@@ -24,15 +24,26 @@ div {
 }
 
 p {
-    background-color: aliceblue;
+    background-color: mediumpurple;
 }
 
 tr {
     color: white;
 }
 
+th{
+    color: black
+}
+
+td{
+    color: black
+}
 br {
     color: white;
+}
+
+legend {
+    color: white
 }
 
 .container {
