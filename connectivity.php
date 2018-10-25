@@ -40,7 +40,7 @@ function SignIn()
         if (mysqli_connect_errno()) {
             echo "Error: Could not connect to database.  Please try again later.";
         }else{
-            echo "Connection successful ";
+            //echo "Connection successful ";
             
         }
         
@@ -96,7 +96,7 @@ function SignIn()
                     // Free result set
                     mysqli_free_result($result);
                 } else{
-                    echo "No records matching your query were found.";
+                    echo "You entered the wrong information douchebag.";
                 }
             }
                 
