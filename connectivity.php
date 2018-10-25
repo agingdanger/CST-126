@@ -96,7 +96,7 @@ function SignIn()
                     // Free result set
                     mysqli_free_result($result);
                 } else{
-                    echo "You entered the wrong information douchebag.";
+                    echo "You entered the wrong information.";
                 }
             }
                 
