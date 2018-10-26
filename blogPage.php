@@ -40,12 +40,12 @@ if (mysqli_num_rows($result) > 0) {
 		echo "<br>";
         
     }
-} 
-echo "<br>";
+}
 else 
 {
 echo "0 results";
 }
+echo "<br>";
     ?>
             <html>
             <form action = "blogPage.php" method = "POST">
