@@ -31,7 +31,7 @@ if (mysqli_num_rows($result) > 0) {
             <form action = "blogPage.php" method = "POST">
             <input id = "delete" type = "submit" name = "delete_post" value = "Delete">
             Delete A Post
-		<input id = "deleet" type = "hidden" name = "deleet" value = "<?= $row['postID'] ?>">
+			<input id = "deleet" type = "hidden" name = "deleet" value = "<?= $row['postID'] ?>">
             </form>
             </html>
 		
