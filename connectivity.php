@@ -96,7 +96,7 @@ function SignIn()
                     // Free result set
                     mysqli_free_result($result);
                 } else{
-                    echo "You entered the wrong information.";
+                    echo "You entered the wrong information douchebag.";
                 }
             }
                 
@@ -130,12 +130,12 @@ function SignIn()
                 <fieldset style="width:30%"><legend>Continue to BLOG</legend>
                     <form  action="content.php" method="POST">
                         
-                    <input id="input" type="submit" name="submit" value="go Post">    
+                    <input id="input" type="submit" name="submit" value="Go Post">
                     </form>    
                     
                     <form action= "blogPage.php" method="POST">
                     
-                    <input id= "input" type = "submit" name ="goder" value= "read Blog">
+                    <input id= "input" type = "submit" name ="goder" value= "Read Blog">
                     </form>
                 </fieldset>
             </div>

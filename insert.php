@@ -1,3 +1,9 @@
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="mystyle.css">
+    <meta charset="UTF-8">
+</head>
+</html>
 
 <?php
 
@@ -49,5 +55,5 @@ if (!empty($username) && !empty($password) && !empty($email)) {
 <form action = "Sign-In.html">
 	Back to the Login page<br>
 	
-	<input type = "submit" value= "Button">
+	<input type = "submit" value= "Login">
 </form>
