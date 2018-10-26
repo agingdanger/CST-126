@@ -22,15 +22,26 @@ $result = mysqli_query($conn, $sql);
 if (mysqli_num_rows($result) > 0) {
     // output data of each row
     while($row = mysqli_fetch_assoc($result)) {
-        echo $row["postID"]. " - " . $row["pos"]. " " . $row["user_userID"]. "<br>";
+        echo $row["postID"]. " - " . $row["pos"]. " " . $row["user_userID"];
         
-        //if($row["user_userID"] === $_SESSION['id']){
-        //    
-        
-        //}
+		if($row["user_userID"] === $_SESSION['id']){
+        ?>  
+		
+			<html>
+            <form action = "blogPage.php" method = "POST">
+            <input id = "delete" type = "submit" name = "delete_post" value = "Delete">
+            Delete A Post
+		<input id = "deleet" type = "hidden" name = "deleet" value = "<?= $row['postID'] ?>">
+            </form>
+            </html>
+		
+		<?php
+        }
+		echo "<br>";
         
     }
 } 
+echo "<br>";
 else 
 {
 echo "0 results";
