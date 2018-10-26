@@ -62,7 +62,7 @@ echo "<br>";
                 //if($sql = "SELECT FROM blogPost WHERE user_userID = $_SESSION('id') && SELECT FROM user WHERE userID = $_SESSION('id')"){
                 $sql = "DELETE FROM blogPost WHERE postID = $DPost";
                 if (mysqli_query($conn, $sql)) {
-                    echo "fourth if";
+                    //echo "fourth if";
                 }
             }
             
