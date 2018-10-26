@@ -62,6 +62,9 @@ echo "0 results";
                     echo "fourth if";
                 }
             }
+            else{
+                echo "can not delete.";
+            }
             
             
         //if  (mysqli_num_rows($result) > 0) {
