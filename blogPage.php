@@ -20,41 +20,33 @@ $sql = "SELECT * FROM blogPost";
 $result = mysqli_query($conn, $sql);
 
 if (mysqli_num_rows($result) > 0) {
+	echo "<table>";
     // output data of each row
     while($row = mysqli_fetch_assoc($result)) {
-        echo $row["postID"]. " - " . $row["pos"]. " " . $row["user_userID"];
+		echo "<tr>";
+        echo "<td>" . $row["postID"]. " - " . $row["pos"]. " " . $row["user_userID"] . "</td>";
         
 		if($row["user_userID"] === $_SESSION['id']){
         ?>  
-		
-			<html>
+			
             <form action = "blogPage.php" method = "POST">
-            <input id = "delete" type = "submit" name = "delete_post" value = "Delete">
-            Delete A Post
+			<td>
+				<input id = "delete" type = "submit" name = "delete_post" value = "Delete">
+			</td>
 			<input id = "deleet" type = "hidden" name = "deleet" value = "<?= $row['postID'] ?>">
             </form>
-            </html>
 		
 		<?php
         }
-		echo "<br>";
-        
+        echo "</tr>";
     }
+	echo "</table>";
 }
 else 
 {
 echo "0 results";
 }
 echo "<br>";
-    ?>
-            <html>
-            <form action = "blogPage.php" method = "POST">
-            <input id = "delete" type = "submit" name = "delete_post" value = "Delete">
-            Delete A Post
-            <input id = "deleet" type = "text" name = "deleet" value = "Post ID">
-            </form>
-            </html>
-            <?php
             
             session_start();
             
