@@ -54,7 +54,7 @@ if($act == 0) {
 }
 else{
     $pos = $_POST['comment'];
-    $sql = "UPDATE blogPost SET pos = '$pos'";
+    $sql = "UPDATE blogPost SET pos = '$pos' WHERE postID = $blogID";
 
     $result = mysqli_query($conn, $sqlEdit);
 
