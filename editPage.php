@@ -5,6 +5,8 @@ session_start();
 $blogID = $_POST['editt'];
 $act = $_POST['act'];
 
+echo $blogID . "<br>";
+
 if($act == 0) {
     $sqlEdit = "SELECT * FROM blogPost WHERE postID = $blogID";
 
