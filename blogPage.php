@@ -35,6 +35,14 @@ if (mysqli_num_rows($result) > 0) {
 			</td>
 			<input id = "deleet" type = "hidden" name = "deleet" value = "<?= $row['postID'] ?>">
             </form>
+
+            <form action = "editPage.php" method = "POST">
+                <td>
+                    <input id = "edit" type = "submit" name = "edit" value = "Edit Post">
+                </td>
+                <input id = "edit" type = "hidden" name = "editt" value = "<?= $row['postID'] ?>">
+                <input id = "edit" type = "hidden" name = "act" value = "0">
+            </form>
 		
 		<?php
         }
