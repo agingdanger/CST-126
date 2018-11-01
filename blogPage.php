@@ -5,7 +5,7 @@
 </head>
 </html>
 
-<?php 
+<?php
 
 session_start();
 
@@ -14,6 +14,21 @@ $conn = mysqli_connect("m7nj9dclezfq7ax1.cbetxkdyhwsb.us-east-1.rds.amazonaws.co
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
+
+$DPost = $_POST["deleet"];
+
+$result = mysqli_query($conn, $sql);
+
+//"SELECT FROM blogPost WHERE postID == $DPost AND user_userID == $_SESSION('id') LIMIT 1"
+
+if($sql = "SELECT FROM blogPost WHERE postID = $DPost AND user_userID = $_SESSION('id')"){
+    //if($sql = "SELECT FROM blogPost WHERE user_userID = $_SESSION('id') && SELECT FROM user WHERE userID = $_SESSION('id')"){
+    $sql = "DELETE FROM blogPost WHERE postID = $DPost";
+    if (mysqli_query($conn, $sql)) {
+        //echo "fourth if";
+    }
+}
+
 
 $sql = "SELECT * FROM blogPost";
 
@@ -56,23 +71,7 @@ echo "0 results";
 }
 echo "<br>";
             
-            session_start();
-            
-            $DPost = $_POST["deleet"];
-            
-            
-            
-            $result = mysqli_query($conn, $sql);
-            
-            //"SELECT FROM blogPost WHERE postID == $DPost AND user_userID == $_SESSION('id') LIMIT 1"
-    
-            if($sql = "SELECT FROM blogPost WHERE postID = $DPost AND user_userID = $_SESSION('id')"){
-                //if($sql = "SELECT FROM blogPost WHERE user_userID = $_SESSION('id') && SELECT FROM user WHERE userID = $_SESSION('id')"){
-                $sql = "DELETE FROM blogPost WHERE postID = $DPost";
-                if (mysqli_query($conn, $sql)) {
-                    //echo "fourth if";
-                }
-            }
+
             
             
         //if  (mysqli_num_rows($result) > 0) {
