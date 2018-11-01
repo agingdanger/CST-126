@@ -56,7 +56,7 @@ else{
     $pos = $_POST['comment'];
     $sql = "UPDATE blogPost SET pos = '$pos' WHERE postID = $blogID";
 
-    $result = mysqli_query($conn, $sqlEdit);
+    $result = mysqli_query($conn, $sql);
 
     include("blogPage.php");
 }
