@@ -26,7 +26,7 @@ if (mysqli_num_rows($result) > 0) {
 		echo "<tr>";
         echo "<td>" . $row["postID"]. " - " . $row["pos"]. " " . $row["user_userID"] . "</td>";
         
-		if($row["user_userID"] === $_SESSION['id']){
+		if($row["user_userID"] === $_SESSION['id'] || $_SESSION["admin"] == 1){
         ?>  
 			
             <form action = "blogPage.php" method = "POST">

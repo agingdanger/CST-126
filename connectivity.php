@@ -88,6 +88,7 @@ function SignIn()
                         $_SESSION["user"] = $row['userName'];
                         $_SESSION["pass"] = $row['userPass'];
                         $_SESSION["email"] = $row['userEmail'];
+                        $_SESSION["admin"] = $row['userAdmin'];
                         echo "</tr>";
                         
                         echo "SUCCESSFULLY LOGGED IN TO USER PROFILE PAGE...";
