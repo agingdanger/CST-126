@@ -7,13 +7,16 @@ $act = $_POST['act'];
 
 echo $blogID . "<br>";
 
+$conn = mysqli_connect("m7nj9dclezfq7ax1.cbetxkdyhwsb.us-east-1.rds.amazonaws.com", "g7t9d2srsz60d6e8", "peqn2hgv8zm6awzt", "lhhymmozru2i72c4");
+
+
 if($act == 0) {
     $sqlEdit = "SELECT * FROM blogPost WHERE postID = $blogID";
 
     $post = "";
 
     if ($result = mysqli_query($conn, $sqlEdit)) {
-        if (mysqli_num_rows($result) > 0) {
+         (mysqli_num_rows($result) > 0) {
             $row = mysqli_fetch_assoc($result);
 
             $post = $row['pos'];
