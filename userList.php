@@ -5,7 +5,6 @@ $conn = mysqli_connect("m7nj9dclezfq7ax1.cbetxkdyhwsb.us-east-1.rds.amazonaws.co
 
 
 $mod = $_POST['modd'];
-$del = 0;
 $del = $_POST['cool'];
 
 echo $mod;
@@ -16,16 +15,21 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-if($del = 1){
+if($del == 1){
 
     $user = $_POST['deleet'];
     echo $user . "   " . $del;
 
-    $sqll = "DELETE FROM user WHERE userID = " . $user;
+    $sql = "DELETE FROM blogPost WHERE user_userID = " . $user;
 
-    $result = mysqli_query($conn, $sqll);
+    $result = mysqli_query($conn, $sql);
+
+    $sql = "DELETE FROM user WHERE userID = " . $user;
+
+    $result = mysqli_query($conn, $sql);
 
     print mysqli_error($conn) . "<br>";
+
 }
 
 if($mod == 0) 
