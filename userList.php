@@ -5,6 +5,7 @@ $conn = mysqli_connect("m7nj9dclezfq7ax1.cbetxkdyhwsb.us-east-1.rds.amazonaws.co
 
 
 $mod = $_POST['modd'];
+$del = 0;
 $del = $_POST['cool'];
 
 echo $mod;
@@ -22,6 +23,7 @@ if($del = 1){
 
     $sqll = "DELETE from 'user' WHERE userID = '$user'";
     $result = mysqli_query($conn, $sqll);
+    print mysqli_error($conn) . "<br>";
 }
 
 if($mod == 0) 
@@ -37,7 +39,7 @@ if($mod == 0)
             echo "<tr>";
             
             
-            echo "<td>" .  $row["userID"]  . " - " . $row["userPass"]  . " - " . $row["userName"] . " - " . $row["userEmail"] . " - " . $row["userAdmin"];      
+            echo "<td>" .  $row["userID"]  . " - " . $row["userPass"]  . " - " . $row["userName"] . " - " . $row["userEmail"] . " - " . $row["userAdmin"] . "</td>";
             
             ?>
             
