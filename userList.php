@@ -5,6 +5,7 @@ $conn = mysqli_connect("m7nj9dclezfq7ax1.cbetxkdyhwsb.us-east-1.rds.amazonaws.co
 
 
 $mod = $_POST['modd'];
+$del = $_POST['cool'];
 
 echo $mod;
 
@@ -38,12 +39,20 @@ if($mod == 0)
 			<td>
 				<input id = "delete" type = "submit" name = "delete_post" value = "Delete">
 			</td>
-			<input id = "deleet" type = "hidden" name = "deleet" value = "<?= $row['userId'] ?>">
+			<input id = "deleet" type = "hidden" name = "deleet" value = "<?= $row['userID'] ?>">
+                <input id = "deleet" type = "hidden" name = "cool" value = "1">
+
             </form>
             
             
             <?php 
-            
+            if($del = 1){
+
+                $user = $row['userID'];
+
+                $sqll = "DELETE $user from user";
+
+            }
             if (userAdmin == 0){
              
                 
