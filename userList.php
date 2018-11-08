@@ -35,6 +35,9 @@ if($modd == 1){
     $user = $_POST['mod'];
 
     $sql = "UPDATE user SET userAdmin = 1 WHERE userID = " . $user;
+
+    $result = mysqli_query($conn, $sql);
+
 }
 
 if($mod == 0) 
@@ -62,7 +65,6 @@ if($mod == 0)
             <input id = "deleet" type = "hidden" name = "cool" value = "1">
 
             </form>
-            </tr >
 
 
 
