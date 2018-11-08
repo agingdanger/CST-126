@@ -15,12 +15,17 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
+if($del = 1){
+
+    $user = $_POST['deleet'];
+
+    $sqll = "DELETE from 'user' WHERE userID = '$user'";
+    $result = mysqli_query($conn, $sqll);
+}
 
 if($mod == 0) 
 {
     $sql = "SELECT * FROM user";
-    
-    $result = mysqli_query($conn, $sql);
     
     if ($result = mysqli_query($conn, $sql)) 
     {
@@ -46,16 +51,6 @@ if($mod == 0)
             
             
             <?php
-
-            if($del = 1){
-
-                $user = $_POST['deleet'];
-
-                echo $user;
-
-                $sqll = "DELETE from 'user' WHERE userID = '$user'";
-
-            }
 
             if (userAdmin == 0){
              
