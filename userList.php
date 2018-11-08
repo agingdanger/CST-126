@@ -39,10 +39,19 @@ if($modd == 1){
     $result = mysqli_query($conn, $sql);
 
 }
+if($modd == 2){
+
+    $user = $_POST['mod'];
+
+    $sql = "UPDATE user SET userAdmin = 0 WHERE userID = " . $user;
+
+    $result = mysqli_query($conn, $sql);
+
+}
 
 if($mod == 0) 
 {
-    $sql = "SELECT * FROM user WHERE userAdmin != 1";
+    $sql = "SELECT * FROM user";
     
     if ($result = mysqli_query($conn, $sql)) 
     {
@@ -54,28 +63,35 @@ if($mod == 0)
             
             
             echo "<td>" .  $row["userID"]  . " - " . $row["userPass"]  . " - " . $row["userName"] . " - " . $row["userEmail"] . " - " . $row["userAdmin"] . "</td>";
-            
-            ?>
-            
-            <form action = "userList.php" method = "POST">
-			<td>
-				<input id = "delete" type = "submit" name = "delete_post" value = "Delete">
-			</td>
-			<input id = "deleet" type = "hidden" name = "deleet" value = "<?= $row['userID'] ?>">
-            <input id = "deleet" type = "hidden" name = "cool" value = "1">
+            $admin = $row["userAdmin"];
+            if($admin == 0) {
+                ?>
 
-            </form>
+                <form action="userList.php" method="POST">
+                    <td>
+                        <input id="delete" type="submit" name="delete_post" value="Delete">
+                    </td>
+                    <input id="deleet" type="hidden" name="deleet" value="<?= $row['userID'] ?>">
+                    <input id="deleet" type="hidden" name="cool" value="1">
 
+                </form>
+                <?php
+            }
+
+            //in the statement below which echo's 1 or two int the moddd value it actually changes the value of moddd
+            // rather than just echoing the number
+                ?>
 
 
              <form action = "userList.php" method = "POST">
              <td>
-             <input id = "mod" type = "submit" name = "Mod" value = "Modify">
+             <input id = "mod" type = "submit" name = "Mod" value = <?php if($admin == 0) echo "Mod"; else echo "Un-Mod"; ?>>
 
              </td>
 
              <input id = "mod" type = "hidden" name = "mod" value = "<?= $row['userID'] ?>">
-             <input id = "mod" type = "hidden" name = "moddd" value = "1">
+
+             <input id = "mod" type = "hidden" name = "moddd" value = <?php if($admin == 0) echo "1"; else echo "2"; ?>>
 
              </form>
 
