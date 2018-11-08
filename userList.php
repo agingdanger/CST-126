@@ -5,7 +5,7 @@ $conn = mysqli_connect("m7nj9dclezfq7ax1.cbetxkdyhwsb.us-east-1.rds.amazonaws.co
 
 
 $mod = $_POST['modd'];
-$del = $_GET['cool'];
+$del = $_POST['cool'];
 
 echo $mod;
 
@@ -35,27 +35,27 @@ if($mod == 0)
             
             ?>
             
-            <form action = "userList.php" method = "GET">
+            <form action = "userList.php" method = "POST">
 			<td>
 				<input id = "delete" type = "submit" name = "delete_post" value = "Delete">
 			</td>
 			<input id = "deleet" type = "hidden" name = "deleet" value = "<?= $row['userID'] ?>">
-                <input id = "deleet" type = "hidden" name = "cool" value = "1">
+            <input id = "deleet" type = "hidden" name = "cool" value = "1">
 
             </form>
             
             
             <?php
 
-            //if($del = 1){
+            if($del = 1){
 
-                $user = $_GET['userID'];
+                $user = $_POST['deleet'];
 
                 echo $user;
 
                 $sqll = "DELETE from 'user' WHERE userID = '$user'";
 
-            //}
+            }
 
             if (userAdmin == 0){
              
