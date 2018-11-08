@@ -48,7 +48,9 @@ if($mod == 0)
             <?php 
             if($del = 1){
 
-                $user = $row['userID'];
+                $user = $_POST['userID'];
+
+                echo $user;
 
                 $sqll = "DELETE from 'user' WHERE userID = '$user'";
 
