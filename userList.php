@@ -6,6 +6,7 @@ $conn = mysqli_connect("m7nj9dclezfq7ax1.cbetxkdyhwsb.us-east-1.rds.amazonaws.co
 
 $mod = $_POST['modd'];
 $del = $_POST['cool'];
+$modd = $_POST['moddd'];
 
 echo $mod;
 
@@ -18,7 +19,6 @@ if (!$conn) {
 if($del == 1){
 
     $user = $_POST['deleet'];
-    echo $user . "   " . $del;
 
     $sql = "DELETE FROM blogPost WHERE user_userID = " . $user;
 
@@ -28,8 +28,13 @@ if($del == 1){
 
     $result = mysqli_query($conn, $sql);
 
-    print mysqli_error($conn) . "<br>";
+}
 
+if($modd == 1){
+
+    $user = $_POST['mod'];
+
+    $sql = "UPDATE user SET userAdmin = 1 WHERE userID = " . $user;
 }
 
 if($mod == 0) 
@@ -58,6 +63,22 @@ if($mod == 0)
 
             </form>
             </tr >
+
+
+
+             <form action = "userList.php" method = "POST">
+             <td>
+             <input id = "mod" type = "submit" name = "Mod" value = "Modify">
+
+             </td>
+
+             <input id = "mod" type = "hidden" name = "mod" value = "<?= $row['userID'] ?>">
+             <input id = "mod" type = "hidden" name = "moddd" value = "1">
+
+             </form>
+
+             </tr >
+
             
             <?php
 
