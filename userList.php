@@ -21,7 +21,7 @@ if($del = 1){
     $user = $_POST['deleet'];
     echo $user . "   " . $del;
 
-    $sqll = "DELETE from 'user' WHERE userID = '$user'";
+    $sqll = "DELETE from user WHERE userID = $user";
     $result = mysqli_query($conn, $sqll);
     print mysqli_error($conn) . "<br>";
 }
