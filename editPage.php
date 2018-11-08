@@ -21,9 +21,8 @@ if($act == 0) {
     if ($result = mysqli_query($conn, $sqlEdit)) {
          if(mysqli_num_rows($result) > 0) {
             $row = mysqli_fetch_assoc($result);
-
-            $post = $row['pos'];
-
+   
+            $post = $row['pos'];           
         }
     }
 

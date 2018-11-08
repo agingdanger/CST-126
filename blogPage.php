@@ -122,3 +122,25 @@ session_start();
 </body>
 </html>
 
+<?php 
+
+if ($_SESSION["admin"] == 1)
+{
+    ?>
+<form action="userList.php"  method="POST" >
+    <input id = modd type="submit" value="Mod Users">
+    <input id = "modd" type = "hidden" name = "modd" value = "0">
+</form>
+</body>
+</html>
+
+<?php 
+
+    
+}
+
+?>
+
+
+
+
