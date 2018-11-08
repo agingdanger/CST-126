@@ -51,7 +51,7 @@ if($modd == 2){
 
 if($mod == 0) 
 {
-    $sql = "SELECT * FROM user";
+    $sql = "SELECT * FROM user WHERE userID != " . $_SESSION['id'];
     
     if ($result = mysqli_query($conn, $sql)) 
     {
