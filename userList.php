@@ -50,9 +50,10 @@ if($mod == 0)
 
                 $user = $row['userID'];
 
-                $sqll = "DELETE from user WHERE userID = $user";
+                $sqll = "DELETE from 'user' WHERE userID = '$user'";
 
             }
+
             if (userAdmin == 0){
              
                 
