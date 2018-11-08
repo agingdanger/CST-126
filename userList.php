@@ -18,6 +18,7 @@ if (!$conn) {
 if($del = 1){
 
     $user = $_POST['deleet'];
+    echo $user . "   " . $del;
 
     $sqll = "DELETE from 'user' WHERE userID = '$user'";
     $result = mysqli_query($conn, $sqll);
@@ -25,7 +26,7 @@ if($del = 1){
 
 if($mod == 0) 
 {
-    $sql = "SELECT * FROM user";
+    $sql = "SELECT * FROM user WHERE userAdmin != 1";
     
     if ($result = mysqli_query($conn, $sql)) 
     {
@@ -48,7 +49,7 @@ if($mod == 0)
             <input id = "deleet" type = "hidden" name = "cool" value = "1">
 
             </form>
-            
+            </tr >
             
             <?php
 
@@ -63,6 +64,8 @@ if($mod == 0)
             }
                 
          }
+
+         echo "</table>";
     }
 }
     
